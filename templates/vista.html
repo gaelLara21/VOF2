@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+     
+     <div class="container-admin">
+          <form action="#" id="form" method="POST">
+            <h2>Bienvenido Administrador</h2>
+
+            <p>¿Que deseas hacer el dia de hoy?</p>
+            
+            <div class="botones-envio">
+              <a href="{{url_for('addproducto')}}" class="btn-ghost secundary round" id="volver">Agregar Producto</a>  
+      </div>
+          </form>
+          </div>
+{% endblock %}
+</body>
+</html> 

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}productos{% endblock %}
+
+{% block content %}
+{% for producto in productos %}
+
+<div class="preview" data-target="p-5">
+  <i class="fas fa-times"></i>
+
+  <img src="{{ url_for('static', filename= producto.1 ) }}" alt="">
+
+  <h3>{{ producto.2 }}</h3>
+  <p>{{ producto.3 }}</p>
+  <div class="price">{{ producto.4 }}</div>
+  
+  <div class="buttons">
+     <a href="/eliminar_pro/{{ producto.0 }}" class="cart">Eliminar</a>
+  </div>
+  {% endfor %}
+</div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ url_for ('static', filename='assets/js/scripts.js') }}"></script>
+    <script src="{{ url_for ('static', filename='assets/js/carrito.js') }}"></script>
+    <script src="{{ url_for ('static', filename='assets/js/pedido.js') }}"></script>
+    <script src="{{ url_for ('static', filename='assets/js/compra.js') }}"></script>
+    <script src="{{ url_for ('static', filename='assets/js/vista.js') }}"></script>
+    <script src="{{ url_for ('static', filename='assets/js/productos.js')}}"></script>
+</body>
+</html>
+
+{% endblock %}

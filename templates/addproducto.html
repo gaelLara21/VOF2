@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}addproducto{% endblock %}
+
+{% block content %}
+
+<div class="container-contacto">
+    <form action="/addproducto.html" method="POST">
+
+      <h2>AGREGA PRODUCTO</h2>
+      <br>
+        <input type="file" name="imagen" id="imagen">
+        <input type="text" name="nombreproducto" id="nombreproducto" placeholder="Ingrese nombre del producto">
+        <input class="text" text name="material" id="material" placeholder="Ingrese material">
+        <input type="number" name="precio" id="precio" value="Inserte precio" />
+
+        <button type="submit">
+          Guardar
+        </button>
+
+        
+         
+    </form>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script  src="{{ url_for ('static', filename='assets/js/scripts.js') }}"></script>
+    <script  src="{{ url_for ('static', filename='assets/js/contacto.js') }}"></script>
+
+
+</body>
+</html>
+
+{% endblock %}

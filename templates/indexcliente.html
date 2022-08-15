@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="slider">
+  <ul>
+    <li><img src="{{ url_for('static', filename='img/thriller1.jpg') }}" alt="..."></li>
+    <li><img src="{{ url_for('static', filename='img/Thriller2.jpg') }}" alt="..."></li>
+    <li><img src="{{ url_for('static', filename='img/thriller3.jpg') }}" alt="..."></li>
+  </ul>
+</div>
+
+
+  <div class="container-index">
+
+    <div class="container-circulos">
+      <div class="container-imagen">
+        <img src="{{ url_for('static', filename='img/chaquetas.jpg') }}" class="circulo">
+        <h2>Chaquetas</h2>
+      </div>
+      <div class="container-imagen">
+        <img src="{{ url_for('static', filename='img/playeras.jpg') }}" class="circulo">
+        <h2>Playeras</h2>
+      </div>
+      <div class="container-imagen">
+        <img src="{{ url_for('static', filename='img/cd.jpg') }}" class="circulo">
+        <h2>CD´S</h2>
+      </div>
+    </div>
+
+    <div class="ver-todo"><a class="button" href="{{ url_for('productos')}}">Ver todos</a></div>
+    
+    <div class="contenedor-columna">
+      <div class="columna1">
+        <h2>SOBRE VIEW OF KING</h2>
+        <p></p>
+        <p></p>
+        <p>VIEW OF KING tiene como proposito proveer de los mejores vestuarios de calidad y con los mejores materiales y todos hechos con el cariño y afecto con el que Michael Bush hacia cada vestuario para el gran Rey Del Pop MICHAEL JACKSON.</p>
+        <p>Cuidamos a todos nuestros clientes ofreciendoles un servicio eficiente y eficaz estando al pendiente de cada uno de los pedidos solicitados.</p>
+      </div>
+      <p></p>
+      <p></p>
+      <div class="columna2">
+        <img src="{{ url_for('static', filename='img/hola.png') }}">
+      </div>
+    </div>
+
+  </div>
+
+
+  
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script  src="{{ url_for ('static', filename='assets/js/scripts.js') }}"></script>
+</body>
+</html>
+
+{% endblock %}
