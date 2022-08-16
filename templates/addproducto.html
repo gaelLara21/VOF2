@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'panel.html' %}
 
 {% block title %}addproducto{% endblock %}
 
 {% block content %}
 
-<div class="container-contacto">
+<div class="container-mn">
     <form action="/addproducto.html" method="POST">
 
       <h2>AGREGA PRODUCTO</h2>
@@ -17,6 +17,10 @@
         <button type="submit">
           Guardar
         </button>
+
+        <div class="botones-envio">
+          <a href="{{url_for('vista')}}" class="exit" id="volver">Salir</a>  
+       </div>
 
         
          

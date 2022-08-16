@@ -3,20 +3,6 @@
 {% block title %}productos{% endblock %}
 
 {% block content %}
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul class=flashes>
-    {% for message in messages %}
-    <div class="alert alert-dismissible alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {{ message }}
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -52,16 +38,29 @@
 
 <main>
 
-  {% for producto in productos %}
-        <div class="modal" i="moddal">
+        <div class="modal" id="modal">
           <div class="modal-content">
-            <img src="{{ url_for('static', filename= producto.1 ) }} alt=" class="modal-img" id="modal-img">
+            <img src="" alt="" class="modal-img" id="modal-img">
           </div>
           <div class="modal-boton" id="modal-boton">X</div>
+        </div>
+
+        <div class="container-productos" id="lista-productos">
+
+          {% for producto in productos %}
+
+          <div class="card">
+            <img src="{{ url_for('static', filename= producto.imagen ) }}" class="card-img">
+            <p></p>
+            <h5>{{ producto.name }}</h5>
+            <p>{{ producto.material }}</p>
+            <p>$<small class="precio">{{ producto.precio }}</small></p>
+            <p></p>
+            <a onclick="comprarProducto()" class="button agregar-carrito" data-id="{{ producto.id }}">{{ producto.href }}</a>
+          </div>
           {% endfor %}
         </div>
 
-       
 </main>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>

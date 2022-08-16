@@ -258,7 +258,7 @@ main{
 }
 
 
-/*contacto*/
+/*Vista Admin*/
 .container-contacto{
     background-image: url("../img/bg.jpg");
     background-size: 100vw 100vh;
@@ -357,6 +357,68 @@ main{
     font-weight: 700;
 
 }
+
+/*Vista Agrega Porducto*/
+.container-mn{
+    background-image: url("../img/agregarproducto.jpg");
+    background-size: 100vw 100vh;
+    background-attachment:fixed;
+    margin-top: auto;
+    padding: 15rem 0;
+}
+.container-mn form{
+   
+    width: 450px;
+    margin:auto;
+    background:rgba(167, 159, 159, 0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}  
+.container-mn form h2{
+    color: #ffffff;
+    text-align: center;
+    margin:0;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.container-mn form input,textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border:none;
+}
+.container-mn form textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+.button-botones-log{
+
+    background:#17A2B8;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    color:  #f2f2f2;
+    font-weight: 700;
+}
+
+.exit{
+    background: #ff0000;
+    text-decoration: none;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    color:  #ffffff;
+    font-weight: 700;
+}
 /*productos-modal*/
 .modal{
     width: 100%;
@@ -394,6 +456,53 @@ main{
 }
 .modal-open{
     display: block;
+}
+
+/*productos-card*/
+.container-productos{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+.container-productos .card{
+    width: 260px;
+    height: 390px;
+    background: #ffffff;
+    color:#000000;
+    border-radius: 8px;
+    border:1px solid  #5b0e88;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+    transition: all 0.25s;
+}
+.container-productos .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+.container-productos .card img{
+    width: 260px;
+    height: 190px;
+    cursor: pointer;
+}
+.container-productos .card h5{
+    font-weight: 600;
+    padding: 5px;
+}
+.container-productos .card p{
+    padding-top: 5px;
+}
+.container-productos .card a{
+    padding:10px;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
 }
 
 
@@ -661,6 +770,5 @@ main{
     }
     .tabla td, .tabla th {
         padding: .1rem;
-    }    
-
+    }  
 }

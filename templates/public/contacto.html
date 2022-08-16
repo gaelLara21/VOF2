@@ -5,7 +5,7 @@
 {% block content %}
   
   <div class="container-contacto">
-  <form action="{% url_for('save') %}" id="form" method="POST">
+  <form action=>
     <h2>CONTACTO</h2>
     <br>
     <input type="text" name="cliente" id="nombre" placeholder="Ingrese su Nombre" onkeypress="return sololetras(event)" onpaste="return false" required>
@@ -20,12 +20,13 @@
     <script  src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script  src="{{ url_for ('static', filename='assets/js/scripts.js') }}"></script>
-    <script  src="{{ url_for ('static', filename='assets/js/contacto.js') }}"></script>
+    <script  src="{{ url_for('static', filename='assets/js/scripts.js') }}"></script>
+    <script  src="{{ url_for('static', filename='assets/js/contacto.js') }}"></script>
 
+    {% endblock %}
 </body>
 </html>
 
-{% endblock %}
+
 
 

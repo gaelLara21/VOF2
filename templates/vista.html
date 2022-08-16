@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-
+{% extends 'panel.html' %}
 {% block content %}
 
      
@@ -11,7 +9,7 @@
             <p>¿Que deseas hacer el dia de hoy?</p>
             
             <div class="botones-envio">
-              <a href="{{url_for('addproducto')}}" class="btn-ghost secundary round" id="volver">Agregar Producto</a>  
+              <a href="{{url_for('addproducto')}}" class="button-add" id="volver">Agregar Producto</a>  
       </div>
           </form>
           </div>

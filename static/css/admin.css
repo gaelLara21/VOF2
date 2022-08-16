@@ -25,14 +25,14 @@ body {
 }
 
 ::selection {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     background: #53f0e3;
 }
 
 .wrapper {
     width: 380px;
     padding: 40px 30px 50px 30px;
-    background: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
     border-radius: 5px;
     text-align: center;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
@@ -167,7 +167,7 @@ form .pass-txt {
 form input[type="submit"] {
     height: 50px;
     margin-top: 30px;
-    color: #fff;
+    color: rgb(3, 3, 3);
     padding: 0;
     border: none;
     background-image: #5372F0;

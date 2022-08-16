@@ -98,7 +98,7 @@ def login2():
             session['username'] = username
             session['password'] = password
 
-            return redirect(url_for('home'))
+            return redirect(url_for('vista.html'))
 
         else:
 
@@ -117,22 +117,25 @@ def register():
 @app.route('/registrar', methods=['GET', 'POST'])
 def registrar():
     if request.method == 'POST':
+
+        nombre = request.form['nombre']
+        apellidos = request.form['apellidos']
         username = request.form['username']
         password = request.form['password']
 
-        usernameadmin = request.form['usernameadmin']
-        passwordadmin = request.form['passwordadmin']
+        username = request.form['username']
+        password = request.form['password']
 
         conn = mysql.connect()
         cur = conn.cursor()
         cur.execute('select * from user where username=(%s) and password=(%s)',
-                    (usernameadmin, passwordadmin))
+                    (username, password))
         user = cur.fetchone()
 
         if user:
 
-            cur.execute('insert into user values (%s,%s)',
-                        (username, password))
+            cur.execute('insert into user values (%s,%s,%s,%s)',
+                        (nombre, apellidos, username, password))
             conn.commit()
             flash('Usuario registrado')
 
@@ -141,8 +144,6 @@ def registrar():
             flash('Usuario del administrador incorrecto')
 
     return render_template('register.html')
-
-
 
 @app.route('/productosadmi')
 def productosadmi():
@@ -208,6 +209,45 @@ def eliminar_pro(iden):
 @login_manager.user_loader
 def load_user(user_id):
     return get_user_by_id(user_id)
+
+######Panel De Admin#######
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
+@app.route('/admin', methods=['GET', 'POST'])
+def loginad():
+    if request.method == 'POST':
+
+        # and 'username' in request.form and 'password' in request.form:
+        user = request.form['user']
+        username = request.form['username']
+        password = request.form['password']
+
+        conn = mysql.connect()
+        cur = conn.cursor()
+        cur.execute('SELECT * FROM user WHERE  user= %s AND username = %s AND password = %s',
+                    (user, username, password))
+        print(user,username,password)
+        # print(username)
+        # print(password)
+        account = cur.fetchone()
+        conn.commit()
+
+        if account:
+
+            session['loggedin'] = True
+            session['user'] = user
+            session['username'] = username
+            session['password'] = password
+
+            return render_template('vista.html')
+
+        else:
+
+            return render_template('admin.html')
+
+    return render_template('admin.html')
 
 @app.route('/vista')
 def vista():
