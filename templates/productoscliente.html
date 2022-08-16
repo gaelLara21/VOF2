@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'panel2.html' %}
 
 {% block title %}productos{% endblock %}
 
@@ -56,7 +56,7 @@
             <p>{{ producto.material }}</p>
             <p>$<small class="precio">{{ producto.precio }}</small></p>
             <p></p>
-            <a onclick="comprarProducto()" class="button agregar-carrito" data-id="{{ producto.id }}">{{ producto.href }}</a>
+            <a href="{{url_for('paypal')}}"  class="button" data-id="{{ producto.id }}">{{ producto.href }}</a>
           </div>
           {% endfor %}
         </div>
@@ -67,7 +67,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{ url_for ('static', filename='assets/js/scripts.js') }}"></script>
-    <script src="{{ url_for ('static', filename='assets/js/carrito.js') }}"></script>
     <script src="{{ url_for ('static', filename='assets/js/pedido.js') }}"></script>
     <script src="{{ url_for ('static', filename='assets/js/compra.js') }}"></script>
     <script src="{{ url_for ('static', filename='assets/js/vista.js') }}"></script>
@@ -75,3 +74,4 @@
 </html>
 
 {% endblock %}
+

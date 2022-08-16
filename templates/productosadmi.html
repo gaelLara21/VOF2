@@ -45,17 +45,18 @@
 
           {% for producto in productos %}
 
-          <div class="card">
+          < class="card">
             <img src="{{ url_for('static', filename= producto.imagen ) }}" class="card-img">
             <p></p>
             <h5>{{ producto.name }}</h5>
             <p>{{ producto.material }}</p>
             <p>$<small class="precio">{{ producto.precio }}</small></p>
             <p></p>
-            <a onclick="comprarProducto()" class="button agregar-carrito" data-id="{{ producto.id }}">{{ producto.href }}</a>
-          </div>
+            <div class="botones-envio">
+              <a href="{{url_for('addproducto')}}" class="button-add" id="volver">Agregar Producto</a>  
+      </div>
           {% endfor %}
-        </div>
+      
 </main>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>

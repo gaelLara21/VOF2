@@ -74,6 +74,7 @@ def logincli():
 
     return render_template('logincliente.html')
 
+
 @app.route('/login2', methods=['GET', 'POST'])
 def login2():
     msg = ''

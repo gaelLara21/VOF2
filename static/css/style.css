@@ -35,6 +35,16 @@ img{
     font-weight: 700;
 }
 
+.button-shop{
+    background: #5b0e88;
+    text-decoration: none;
+    padding: 15px;
+    margin-top: 8px;
+    border-radius: 5px;
+    color:  #f2f2f2;
+    font-weight: 700;
+}
+
 .button-delete{
     background: #5b0e88;
     text-decoration: none;
