@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmacion{% endblock %}
+
+{% block content %}
+    <main>
+      <div class="container-carrito">
+              
+                  <h2>Realizar Compra</h2>
+                  <form id="procesar-pago" action="#" method="POST">
+                      <div class="contenido titulo">
+                          <label for="cliente" class="">Cliente :</label>
+                          <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Ingrese su nombre">
+                      </div>
+                      <div class="contenido titulo">
+                          <label for="email" class="">Direccion</label>
+                          <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su direccion">
+                      </div>
+                      
+                      <div class="contenido titulo">
+                        <label for="email" class="">Numero Telefonico</label>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su Numero">
+                    </div>
+
+                      <div class="botones-envio">
+                              <a href="{{ url_for('productoscliente')}}" class="button" id="volver">Seguir comprando</a>
+                              <a href="{{ url_for('paypal')}}" class="button" id="volver">Pagar </a>
+                             
+                      </div>
+                  </form>
+
+      </div>
+  </main>
+    
+  
+
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="{{ url_for ('static', filename='assets/js/scripts.js') }}"></script>
+    <script src="{{ url_for ('static', filename='assets/js/carrito.js') }}"></script>
+    <script src="{{ url_for ('static', filename='assets/js/pedido.js') }}"></script>
+    <script src="{{ url_for ('static', filename='assets/js/compra.js') }}"></script>
+
+</body>
+</html>
+
+{% endblock %}

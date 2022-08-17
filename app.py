@@ -254,6 +254,12 @@ def loginad():
 def vista():
    return render_template('vista.html')
 
+######Datos de envio#######
+
+@app.route('/Confirmacion')
+def confirmacion():
+    return render_template('Confirmacion.html')
+
  
 ####### registro de apps #######
 app.register_blueprint(home_blueprint)
@@ -262,3 +268,5 @@ app.register_blueprint(error_pages_blueprint)
 
 if  __name__ == '__main__':
     app.run(debug=True)
+
+    
