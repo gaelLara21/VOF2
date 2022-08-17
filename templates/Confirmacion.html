@@ -6,26 +6,41 @@
     <main>
       <div class="container-carrito">
               
-                  <h2>Realizar Compra</h2>
-                  <form id="procesar-pago" action="#" method="POST">
+                  <h2>Detalles</h2>
+                  <form action="{{ url_for('registro') }}" method="post">
+
+                   
                       <div class="contenido titulo">
-                          <label for="cliente" class="">Cliente :</label>
-                          <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Ingrese su nombre">
+                          <label for="nombre" class="">Nombre :</label>
+                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre">
                       </div>
+
                       <div class="contenido titulo">
-                          <label for="email" class="">Direccion</label>
-                          <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su direccion">
+                        <label for="nombre" class="">Apellido :</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese su nombre">
+                    </div>
+
+                      <div class="contenido titulo">
+                          <label for="direccion" class="">Direccion</label>
+                          <input type="text" class="direccion" id="direccion" name="direccion" placeholder="Ingrese su direccion">
                       </div>
                       
                       <div class="contenido titulo">
-                        <label for="email" class="">Numero Telefonico</label>
-                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su Numero">
+                        <label for="numero" class="">Numero Telefonico</label>
+                        <input type="text" class="form-control" id="numero" name="numero" placeholder="Ingrese su Numero">
                     </div>
 
+                    <div class="contenido titulo">
+                        <label for="email" class="">Correo Electronico</label>
+                        <input type="text" class="form-control" id="correo" name="correo" placeholder="Ingrese su Correo">
+                    </div>
+
+                    <button type="submit">
+                        Guardar
+                      </button>
+              
                       <div class="botones-envio">
-                              <a href="{{ url_for('productoscliente')}}" class="button" id="volver">Seguir comprando</a>
-                              <a href="{{ url_for('paypal')}}" class="button" id="volver">Pagar </a>
-                             
+                              <a href="{{ url_for('paypal')}}" class="button" id="volver">Pagar </a> 
                       </div>
                   </form>
 

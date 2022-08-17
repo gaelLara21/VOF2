@@ -111,41 +111,6 @@ def login2():
 def registrarcliente():
     return render_template('registrarcliente.html')
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    return render_template('register.html')
-
-@app.route('/registrar', methods=['GET', 'POST'])
-def registrar():
-    if request.method == 'POST':
-
-        nombre = request.form['nombre']
-        apellidos = request.form['apellidos']
-        username = request.form['username']
-        password = request.form['password']
-
-        username = request.form['username']
-        password = request.form['password']
-
-        conn = mysql.connect()
-        cur = conn.cursor()
-        cur.execute('select * from user where username=(%s) and password=(%s)',
-                    (username, password))
-        user = cur.fetchone()
-
-        if user:
-
-            cur.execute('insert into user values (%s,%s,%s,%s)',
-                        (nombre, apellidos, username, password))
-            conn.commit()
-            flash('Usuario registrado')
-
-        else:
-
-            flash('Usuario del administrador incorrecto')
-
-    return render_template('register.html')
-
 @app.route('/productosadmi')
 def productosadmi():
     conn = mysql.connect()
@@ -255,10 +220,32 @@ def vista():
    return render_template('vista.html')
 
 ######Datos de envio#######
-
 @app.route('/Confirmacion')
 def confirmacion():
     return render_template('Confirmacion.html')
+
+@app.route('/registro', methods=['GET', 'POST'])
+def registro():
+    if request.method == 'POST':
+
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        direccion = request.form['direccion']
+        numero = request.form['numero']
+        correo = request.form['correo']
+
+        conn = mysql.connect()
+        cur = conn.cursor()
+        cur.execute('select idpedidos from pedidos order by idpedidos desc')
+        cur.fetchone()
+       
+
+        cur.execute('insert into pedidos (nombre,apellido,direccion,numero,correo) values (%s,%s,%s,%s,%s)',
+        (nombre,apellido,direccion,numero,correo))
+        conn.commit()
+
+       
+    return render_template('confirmacion.html')
 
  
 ####### registro de apps #######
