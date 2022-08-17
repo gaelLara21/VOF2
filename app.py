@@ -243,9 +243,38 @@ def registro():
         cur.execute('insert into pedidos (nombre,apellido,direccion,numero,correo) values (%s,%s,%s,%s,%s)',
         (nombre,apellido,direccion,numero,correo))
         conn.commit()
-
        
     return render_template('confirmacion.html')
+
+
+     #####Registro de Usuarios####
+
+@app.route('/unete')
+def unete():
+    return render_template('unete.html')
+
+@app.route('/regist', methods=['GET', 'POST'])
+def regrist():
+    if request.method == 'POST':
+
+        nombre = request.form['nombre']
+        apellidos = request.form['apellidos']
+        password = request.form['password']
+        username = request.form['username']
+
+        conn = mysql.connect()
+        cur = conn.cursor()
+        cur.execute('select idclientes from clientes order by idclientes desc')
+        cur.fetchone()
+       
+
+        cur.execute('insert into clientes (nombre,apellidos,password,username) values (%s,%s,%s,%s)',
+        (nombre,apellidos,password,username,))
+        conn.commit()
+       
+    return render_template('logincliente.html')
+
+
 
  
 ####### registro de apps #######

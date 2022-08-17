@@ -308,6 +308,69 @@ main{
     max-width: 100%;
 }
 
+/*Container Unete*/
+
+.container-unete{
+    background-image: url("../img/Us.jpg");
+    background-size: 100vw 100vh;
+    background-attachment:fixed;
+    margin-top: auto;
+    padding: 15rem 0;
+}
+.container-unete form{
+   
+    width: 450px;
+    margin:auto;
+    background:rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}  
+.container-unete form h2{
+    color: #ffffff;
+    text-align: center;
+    margin:0;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.container-unete form p{
+    color: #ffffff;
+    text-align: center;
+    margin:0;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.container-unete form input,textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border:none;
+}
+.container-unete form textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+.button-botones-log{
+
+    background:#17A2B8;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    color:  #f2f2f2;
+    font-weight: 700;
+
+}
+
+
 .container-admin{
     background-image: url("../img/portadaadmin.jpg");
     background-size: 100vw 100vh;

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Unete{% endblock %}
+
+{% block content %}
+  
+  <div class="container-unete">
+    <form action="{{ url_for('regrist') }}" method="post">
+    <h2>UNETE</h2>
+    <br>
+    <input type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre">
+    <input type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos" required>
+    <input type="text" name="password" id="password" placeholder="Ingrese una contraseña "required>
+    <input type="text" name="username" id="username" placeholder="Ingresa un nombre de usuario">
+    
+    <button type="submit">
+      Guardar
+    </button>
+
+  </form>
+  </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script  src="{{ url_for('static', filename='assets/js/scripts.js') }}"></script>
+    <script  src="{{ url_for('static', filename='assets/js/contacto.js') }}"></script>
+
+    {% endblock %}
+</body>
+</html>
+
+
+
+
