@@ -1,7 +1,0 @@
-flask
-flask_wtf
-email_validator
-pymysql
-pillow
-werkzeug
-flask_login
