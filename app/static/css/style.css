@@ -100,18 +100,19 @@ a{
   .form-control {
     background-color: #5c009900; 
     color: #ffffff; 
-    border: 2px solid #ffffff; /* Borde blanco */
-    border-radius: 5px 0 0 5px; /* Bordes redondeados a la izquierda */
+    text-decoration: rgb(255, 255, 255);
+    border: 2px solid #ffffff;
+    border-radius: 5px 0 0 5px; 
 }
 
 .btn-outline-success {
     background-color: transparent; 
     border-color: #ffffff; 
     color: #ffffff; 
-    padding: 10px; /* Espaciado para el botón */
+    padding: 10px;
     display: flex; 
     align-items: center; 
-    border-radius: 0 5px 5px 0; /* Bordes redondeados a la derecha */
+    border-radius: 0 5px 5px 0;
 }
 
 .btn-outline-success:hover {
